@@ -1,0 +1,18 @@
+from sklearn import tree                                                        
+clf = tree.DecisionTreeClassifier()                                             
+
+#[emission, 1=FC 2=IF, photostability 0=NO 1=YES]  FC=flow cytometry  IF=immunofluorescence                                         
+X = [ [500, 1,0],   # Pacific green
+      [530, 1,0],   # FITC      
+      [530, 2,1],   # Alexa488 
+      [550, 1,0],   # Pacific orange
+      [570, 1,0],   # PE      
+      [576, 2,1],   # TRITC                                                           
+      [660, 1,0],   # APC
+      [666, 2,1]]   # Cy-5                                                           
+
+Y = ['Pacific green','FITC','Alexa488','Pacific orange','PE','TRITC','APC','Cy-5']                                   
+
+clf = clf.fit(X, Y)                                                             
+prediction = clf.predict([[525, 1,0]])  # I need a fluorophore for flow cytometry that emits at 525                   
+print(prediction)  
