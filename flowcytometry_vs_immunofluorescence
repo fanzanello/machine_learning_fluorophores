@@ -1,7 +1,7 @@
 from sklearn import tree                                                        
 clf = tree.DecisionTreeClassifier()                                             
 
-#[emission, 1=FC 2=IF, photostability 0=NO 1=YES]  FC=flow cytometry  IF=immunofluorescence                                         
+#[emission λ, 1=FC 2=IF, photostability 0=NO 1=YES]  FC=flow cytometry  IF=immunofluorescence                                         
 X = [ [500, 1,0],   # Pacific green
       [530, 1,0],   # FITC      
       [530, 2,1],   # Alexa488 
